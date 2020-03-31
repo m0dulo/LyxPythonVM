@@ -51,7 +51,7 @@ int ArrayList<T>::length() const {
 }
 
 template <typename T>
-T ArrayList<T>::get(int index) {
+T ArrayList<T>::get(int index) const{
     return _array[index];
 }
 
