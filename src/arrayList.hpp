@@ -20,6 +20,6 @@ public:
     int size() const;
     int length() const;
     T pop();
-}
+};
 
 #endif // ARRAY_LIST_HPP_

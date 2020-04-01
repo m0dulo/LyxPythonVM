@@ -1,4 +1,6 @@
 #include "bufferedInputStream.hpp"
+#include "binaryFileParser.hpp"
+#include <iostream>
 
 int main(int argc, char* argv[]) {
     if (argc <= 1) {
@@ -7,7 +9,7 @@ int main(int argc, char* argv[]) {
     }
 
     BufferedInputStraem stream(argv[1]);
-    printf("magic number is 0x%x\n", stream.read_init());
-
+    BinaryFileParser parser(&stream);
+    CodeObject* main_code = parser.parse();
     return 0;
 }

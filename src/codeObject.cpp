@@ -12,7 +12,7 @@ CodeObject::CodeObject(int argcount, int nlocals, int flag, LyxString *bytecodes
             _consts(consts),
             _var_names(varnames),
             _free_vars(freevars),
-            _cell_cars(cellvars),
+            _cell_vars(cellvars),
             _co_name(co_name),
             _file_name(file_name),
             _lineno(lineno),

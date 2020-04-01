@@ -10,6 +10,6 @@ public:
     LyxString(const char* x, const int length);
 
     char* value() const {return _value;}
-    int length() const {return _length};
+    int length() const {return _length;};
 };
 #endif // LYX_STRING_HPP_

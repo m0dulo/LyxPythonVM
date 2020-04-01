@@ -15,5 +15,7 @@ public:
     BinaryFileParser(BufferedInputStraem* stream);
 
     CodeObject* parse();
-}
+
+    CodeObject* get_code_object();
+};
 #endif // BINARY_FILE_PARSER_HPP_

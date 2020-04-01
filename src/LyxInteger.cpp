@@ -1,5 +1,5 @@
 #include "lyxInteger.hpp"
 
-lyxInteger::LyxInteger(int x) {
+LyxInteger::LyxInteger(int x) {
     _value = x;
 }
