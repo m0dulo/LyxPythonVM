@@ -70,3 +70,9 @@ template <typename T>
 T ArrayList<T>::pop() {
     return _array[--_size];
 }
+
+class LyxObject;
+template class ArrayList<LyxObject*>;
+
+class LyxString;
+template class ArrayList<LyxString*>;
