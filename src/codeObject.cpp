@@ -1,12 +1,13 @@
 #include "codeObject.hpp"
 
-CodeObject::CodeObject(int argcount, int nlocals, int flag, LyxString *bytecodes,
-        ArrayList<LyxObject>* consts, ArrayList<LyxObject>* names,
-        ArrayList<LyxObject>* varnames,
-        ArrayList<LyxObject>* freevars, ArrayList<LyxObject>* cellvars,
+CodeObject::CodeObject(int argcount, int nlocals, int stacksize, int flag, LyxString *bytecodes,
+        ArrayList<LyxObject*>* consts, ArrayList<LyxObject*>* names,
+        ArrayList<LyxObject*>* varnames,
+        ArrayList<LyxObject*>* freevars, ArrayList<LyxObject*>* cellvars,
         LyxString* file_name, LyxString* co_name, int lineno, LyxString* notable):
             _argcount(argcount),
             _nlocals(nlocals),
+            _stack_size(stacksize),
             _flag(flag),
             _bytebodes(bytecodes),
             _consts(consts),
