@@ -1,4 +1,4 @@
-#include "codeObject.hpp"
+#include "code/codeObject.hpp"
 
 CodeObject::CodeObject(int argcount, int nlocals, int stacksize, int flag, LyxString *bytecodes,
         ArrayList<LyxObject*>* consts, ArrayList<LyxObject*>* names,

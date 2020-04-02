@@ -1,6 +1,5 @@
-#include "bufferedInputStream.hpp"
-#include "binaryFileParser.hpp"
-#include <iostream>
+#include "util/bufferedInputStream.hpp"
+#include "code/binaryFileParser.hpp"
 
 int main(int argc, char* argv[]) {
     if (argc <= 1) {

@@ -1,7 +1,9 @@
 #ifndef LYX_STRING_HPP_
 #define LYX_STRING_HPP_
 
-class LyxString {
+#include "object/lyxObject.hpp"
+
+class LyxString : public LyxObject {
 private:
     char* _value;
     int _length;

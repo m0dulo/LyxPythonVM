@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
-#include "binaryFileParser.hpp"
+#include "code/binaryFileParser.hpp"
 
 BinaryFileParser::BinaryFileParser(BufferedInputStraem* buf_file_stream) {
     file_stream = buf_file_stream;

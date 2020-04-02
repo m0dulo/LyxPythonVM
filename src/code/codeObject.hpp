@@ -1,7 +1,7 @@
 #ifndef CODE_OBJECT_HPP_
 #define CODE_OBJECT_HPP_
 
-#include "lyxObject.hpp"
+#include "object/lyxObject.hpp"
 
 class LyxString;
 

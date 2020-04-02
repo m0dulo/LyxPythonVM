@@ -1,12 +1,12 @@
 #ifndef BINARY_FILE_PARSER_HPP_
 #define BINARY_FILE_PARSER_HPP_
 
-#include "bufferedInputStream.hpp"
-#include "arrayList.hpp"
-#include "lyxObject.hpp"
-#include "lyxInteger.hpp"
-#include "lyxString.hpp"
-#include "codeObject.hpp"
+#include "util/bufferedInputStream.hpp"
+#include "util/arrayList.hpp"
+#include "object/lyxObject.hpp"
+#include "object/lyxInteger.hpp"
+#include "object/lyxString.hpp"
+#include "code/codeObject.hpp"
 
 class BinaryFileParser {
 private:

@@ -1,4 +1,4 @@
-#include "arrayList.hpp"
+#include "util/arrayList.hpp"
 #include <stdio.h>
 
 template <typename T>

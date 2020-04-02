@@ -1,7 +1,7 @@
 #ifndef LYX_INTEGER_HPP_
 #define LYX_INTEGER_HPP_
 
-#include "lyxObject.hpp"
+#include "object/lyxObject.hpp"
 
 class LyxInteger : public LyxObject {
 private:

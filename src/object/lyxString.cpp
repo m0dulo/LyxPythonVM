@@ -1,4 +1,4 @@
-#include "lyxString.hpp"
+#include "object/lyxString.hpp"
 #include <string.h>
 
 LyxString::LyxString(const char* x) {
