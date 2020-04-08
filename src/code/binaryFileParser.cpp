@@ -85,8 +85,10 @@ LyxString* BinaryFileParser::get_file_name() {
 }
 
 LyxString* BinaryFileParser::get_byte_codes() {
-    assert(file_stream->read() == 's');
-
+    // assert(file_stream->read() == 's');
+    if (file_stream->read() != 's') {
+        return nullptr;
+    }
     return get_string();
 }
 
@@ -101,7 +103,7 @@ LyxString* BinaryFileParser::get_no_table() {
 }
 
 ArrayList<LyxObject*>*  BinaryFileParser::get_consts() {
-    if (file_stream->read() == '(') {
+    if (file_stream->read() == 0x28) {
         return get_tuple();
     }
 

@@ -11,11 +11,18 @@ void Interpreter::run(CodeObject* codes) {
 
     _stack = new ArrayList<LyxObject*>(codes->_stack_size);
     _consts = codes->_consts;
+    
+    #ifdef DEBUG
+    printf("length : %d \n", codes->_bytebodes->length());
+    for (int i = 0; i < codes->_bytebodes->length(); ++i) {
+        printf("%02x ", (unsigned char)(codes->_bytebodes->value()[i]));
+    }
+    printf("\n");
+    #endif
 
     while (pc < code_length) {
         unsigned char op_code = (codes->_bytebodes->value())[pc++];
         bool has_argument = (op_code & 0xff) >= ByteCode::HAVE_ARGUMENT;
-
         int op_arg = -1;
         if (has_argument) {
             int byte1 = (codes->_bytebodes->value()[pc++] & 0xff);
