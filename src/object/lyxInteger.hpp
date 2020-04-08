@@ -9,6 +9,9 @@ private:
 public:
     LyxInteger(int x);
     int value() const {return _value;}
+
+    virtual void print();
+    virtual LyxObject* add(LyxObject* x);
 };
 
 #endif // LYX_INTEGER_HPP_

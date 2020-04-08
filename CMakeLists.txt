@@ -16,6 +16,7 @@ set(SRCS src/main.cpp
     src/object/lyxInteger.cpp
     src/object/lyxString.cpp
     src/util/arrayList.cpp
+    src/runtime/interpreter.cpp
     src/code/binaryFileParser.cpp
     src/code/codeObject.cpp)
 

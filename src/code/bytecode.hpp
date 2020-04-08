@@ -70,7 +70,7 @@ public:
         EQUAL,
         NOT_EQUAL,
         GRATER,
-        GRATER,_EQUAL
+        GRATER_EQUAL
     };
 };
 

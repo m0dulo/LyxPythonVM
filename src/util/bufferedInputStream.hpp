@@ -45,9 +45,9 @@ public:
     }
 
     void close() {
-        if (fp != NULL) {
+        if (fp != nullptr) {
             fclose(fp);
-            fp = NULL;
+            fp = nullptr;
         }
     }
 };
