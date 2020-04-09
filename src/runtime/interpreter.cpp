@@ -79,6 +79,14 @@ void Interpreter::run(CodeObject* codes) {
                         printf("ERROR: Unrecognized compare op %d\n", op_arg);
                 }
                 break;
+            case ByteCode::POP_JUMP_IF_FALSE:
+                v = POP();
+                if (((LyxInteger*)v)->value() == 0)
+                    pc = op_arg;
+                break;
+            case ByteCode::JUMP_FORWARD:
+                pc += op_arg;
+                break;
             default:
                 printf("ERROR: Unrecognized bye code %d\n", op_code);
         }
