@@ -4,6 +4,10 @@
 #include "object/lyxInteger.hpp"
 #include <string.h>
 #include <stdio.h>
+#include <stack>
+
+#define PUSH(x) _stack->add((x))
+#define POP()   _stack->pop() 
 
 void Interpreter::run(CodeObject* codes) {
     int pc = 0;
@@ -32,22 +36,48 @@ void Interpreter::run(CodeObject* codes) {
         LyxObject* v, * w;
         switch (op_code) {
             case ByteCode::LOAD_CONST:
-                _stack->add(_consts->get(op_arg));
+                PUSH(_consts->get(op_arg));
                 break;
             case ByteCode::PRINT_ITEM:
-                v = _stack->pop();
+                v = POP();
                 v->print();
                 break;
             case ByteCode::PRINT_NEWLINE:
                 printf("\n");
                 break;
             case ByteCode::BINARY_ADD:
-                v = _stack->pop();
-                w = _stack->pop();
-                _stack->add(w->add(v));
+                v = POP();
+                w = POP();
+                PUSH(w->add(v));
                 break;
             case ByteCode::RETURN_VALUE:
-                _stack->pop();
+                POP();
+                break;
+            case ByteCode::COMPARE_OP:
+                w = POP();
+                v = POP();
+                switch(op_arg) {
+                    case ByteCode::COMPARE::GRATER:
+                        PUSH(v->greater(w));
+                        break;
+                    case ByteCode::COMPARE::LESS:
+                        PUSH(v->less(w));
+                        break;
+                    case ByteCode::COMPARE::EQUAL:
+                        PUSH(v->equal(w));
+                        break;
+                    case ByteCode::COMPARE::NOT_EQUAL:
+                        PUSH(v->not_equal(w));
+                        break;
+                    case ByteCode::COMPARE::GRATER_EQUAL:
+                        PUSH(v->greater_equal(w));
+                        break;
+                    case ByteCode::COMPARE::LESS_EQUAL:
+                        PUSH(v->less_equal(w));
+                        break;
+                    default:
+                        printf("ERROR: Unrecognized compare op %d\n", op_arg);
+                }
                 break;
             default:
                 printf("ERROR: Unrecognized bye code %d\n", op_code);
