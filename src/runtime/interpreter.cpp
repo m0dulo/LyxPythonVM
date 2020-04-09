@@ -2,6 +2,7 @@
 #include "util/arrayList.hpp"
 #include "object/lyxString.hpp"
 #include "object/lyxInteger.hpp"
+#include "runtime/universe.hpp"
 #include <string.h>
 #include <stdio.h>
 #include <stack>
@@ -81,7 +82,7 @@ void Interpreter::run(CodeObject* codes) {
                 break;
             case ByteCode::POP_JUMP_IF_FALSE:
                 v = POP();
-                if (((LyxInteger*)v)->value() == 0)
+                if (v == Universe::LyxFalse)
                     pc = op_arg;
                 break;
             case ByteCode::JUMP_FORWARD:

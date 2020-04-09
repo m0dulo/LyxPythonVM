@@ -18,6 +18,7 @@ set(SRCS src/main.cpp
     src/util/arrayList.cpp
     src/runtime/interpreter.cpp
     src/code/binaryFileParser.cpp
-    src/code/codeObject.cpp)
+    src/code/codeObject.cpp
+    src/runtime/universe.cpp)
 
 add_executable(saber ${SRCS})
