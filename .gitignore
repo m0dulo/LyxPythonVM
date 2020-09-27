@@ -3,3 +3,4 @@
 /test/*.pyc
 /.vscode/
 /tools/*.txt
+compile_commands.json
