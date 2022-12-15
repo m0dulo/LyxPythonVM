@@ -23,4 +23,4 @@ public:
   T pop();
 };
 
-#endif //ARRAY_LIST_HPP
+#endif // ARRAY_LIST_HPP
