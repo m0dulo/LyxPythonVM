@@ -8,16 +8,16 @@ template <typename T> ArrayList<T>::ArrayList(int n) {
 }
 
 template <typename T> void ArrayList<T>::add(T t) {
-  if (_size > _length)
+  if (_size >= _length)
     expand();
 
   _array[_size++] = t;
 }
 
 template <typename T> void ArrayList<T>::insert(int index, T t) {
-  add(nullptr);
+  add(NULL);
 
-  for (int i = _size; i > index; --i) {
+  for (int i = _size; i > index; i--) {
     _array[i] = _array[i - 1];
   }
 
@@ -25,9 +25,9 @@ template <typename T> void ArrayList<T>::insert(int index, T t) {
 }
 
 template <typename T> void ArrayList<T>::expand() {
-  T *new_array = new T[length << 1];
-  for (int i = 0; i < _length; ++i) {
-    new_array[i] = _array[i]
+  T *new_array = new T[_length << 1];
+  for (int i = 0; i < _length; i++) {
+    new_array[i] = _array[i];
   }
   _array = new_array;
   delete[] _array;
@@ -36,9 +36,9 @@ template <typename T> void ArrayList<T>::expand() {
   printf("expand an array to %d, size is %d\n", _length, _size);
 }
 
-template <typename T> int ArrayList<T>::size() const { return _size; }
+template <typename T> int ArrayList<T>::size() { return _size; }
 
-template <typename T> int ArrayList<T>::length() const { return _length; }
+template <typename T> int ArrayList<T>::length() { return _length; }
 
 template <typename T> T ArrayList<T>::get(int index) { return _array[index]; }
 

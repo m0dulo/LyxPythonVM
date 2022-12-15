@@ -1,5 +1,7 @@
-#ifndef ARRAY_LIST_HPP_
-#define ARRAY_LIST_HPP_
+#ifndef ARRAY_LIST_HPP
+#define ARRAY_LIST_HPP
+
+#include <stdio.h>
 
 template <typename T> class ArrayList {
 private:
@@ -14,11 +16,11 @@ public:
 
   void add(T t);
   void insert(int index, T t);
-  T get(int index) const;
+  T get(int index);
   void set(int index, T t);
-  int size() const;
-  int length() const;
+  int size();
+  int length();
   T pop();
-}
+};
 
-#endif // ARRAY_LIST_HPP_
+#endif //ARRAY_LIST_HPP
