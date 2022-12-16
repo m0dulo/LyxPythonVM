@@ -1,3 +1,3 @@
 # LyxPythonVM
-Python Virtual Machine from Scratch
-Currently in development
+🐍 Python Virtual Machine from Scratch
+👨‍💻 Currently in development
