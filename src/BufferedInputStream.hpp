@@ -5,20 +5,20 @@
 
 #define BUFFER_LEN 256
 
-class BufferedInputStraem {
+class BufferedInputStream {
 private:
   FILE *fp;
   char szBuffer[BUFFER_LEN];
   unsigned short index;
 
 public:
-  BufferedInputStraem(char const *filename) {
+  BufferedInputStream(char const *filename) {
     fp = fopen(filename, "rb");
     fread(szBuffer, BUFFER_LEN * sizeof(char), 1, fp);
     index = 0;
   }
 
-  ~BufferedInputStraem() { close(); }
+  ~BufferedInputStream() { close(); }
 
   char read() {
     if (index < BUFFER_LEN)

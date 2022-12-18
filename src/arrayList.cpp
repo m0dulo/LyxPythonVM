@@ -53,8 +53,9 @@ template <typename T> void ArrayList<T>::set(int index, T t) {
 }
 
 template <typename T> T ArrayList<T>::pop() { return _array[--_size]; }
+
 class LyxObject;
-template class ArrayList<LyxObject*>;
+template class ArrayList<LyxObject *>;
 
 class LyxString;
-template class ArrayList<LyxString*>;
+template class ArrayList<LyxString *>;
